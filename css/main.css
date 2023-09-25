@@ -1,0 +1,19 @@
+/*Style file created by Keenan Golston
+=======================================
+00: CSS variables
+01: Colors
+02: Typography
+
+=======================================
+*/
+
+/* 01: Colors */
+html{
+    background-color: hsla(145, 35%, 89%, 0.9);
+    padding: 5%;
+}
+body{
+    background-color: hsla(155, 39%, 72%, 0.95);
+    color: rgb(220, 238, 238);
+    padding: 5%;
+}
