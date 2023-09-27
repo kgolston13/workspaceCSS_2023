@@ -7,13 +7,51 @@
 =======================================
 */
 
-/* 01: Colors */
-html{
-    background-color: hsla(145, 35%, 89%, 0.9);
-    padding: 5%;
+/* 00: CCS variables */
+:root{
+    --page-color: hsla(332, 60%, 49%, 0.5);
+    --body-color: hsla(182, 53%, 55%, 0.5);
+    --sidebar-color: hsla(71, 78%, 52%, 0.712);
+    --footbar-color: hsla(258, 60%, 51%, 0.5);
+    --tab-color: hsla(46, 50%, 80%, 0.5);
+    --footbar-height: 15vh;
 }
+/* 01 color*/
 body{
-    background-color: hsla(155, 39%, 72%, 0.95);
-    color: rgb(220, 238, 238);
-    padding: 5%;
+    background-color: var(--body-color)
+}
+aside.sidebar{
+    background-color: var(--sidebar-color);
+}
+#zen-intro{
+    background-color: var(--page-color);
+}
+#zen-supporting{
+    background-color: var(--page-color);
+}
+/* 02: Typography*/
+
+/* 03: Layout */
+ 
+/*For test*/
+div.explanation, div.participation, div.benefits, div.requirements{
+    position: fixed;
+    top: 85vh;
+    width: 30%;
+    padding: 2%;
+    background-image: url(../img/newspaper3.jpg);
+}
+aside.sidebar{
+    position: absolute;
+    width: 0;
+    top: 0;
+    right: 20%;
+}
+div.extra2{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--footbar-height);
+    background-color: var(--footbar-color);
 }
