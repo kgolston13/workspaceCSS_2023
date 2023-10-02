@@ -12,9 +12,14 @@
     --page-color: hsla(332, 60%, 49%, 0.5);
     --body-color: hsla(182, 53%, 55%, 0.5);
     --sidebar-color: hsla(71, 78%, 52%, 0.712);
-    --footbar-color: hsla(258, 60%, 51%, 0.5);
+    --footbar-color: hsla(258, 60%, 51%, 1);
     --tab-color: hsla(46, 50%, 80%, 0.5);
     --footbar-height: 15vh;
+    --page-position: 85%;
+    --page-width: 30%;
+    --tab-gap: 2vw;
+    --tab-width: 10vw;
+    --tab-height: 5vh;
 }
 /* 01 color*/
 body{
@@ -30,16 +35,58 @@ aside.sidebar{
     background-color: var(--page-color);
 }
 /* 02: Typography*/
-
+/*import fonts from in font folder*/
+@font-face {
+    font-family: 'myFont';
+    src: url(../fonts/chunkfive.woff);
+}
+/*using the font*/
+header h1{
+    font-family: 'myFont', sans-serif;
+    font-weight: 400;
+    font-size: 1.25em;
+    letter-spacing: normal;
+    line-height: 1.5em;
+    text-align: center;
+}
+/*using online fonts*/
+h3{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1.25em;
+    letter-spacing: normal;
+    line-height: 1.5em;
+    text-align: center;
+}
 /* 03: Layout */
- 
+
 /*For test*/
 div.explanation, div.participation, div.benefits, div.requirements{
     position: fixed;
-    top: 85vh;
-    width: 30%;
-    padding: 2%;
+    top: var(--page-position);
+    width: var(--page-width);
+    padding-left: 10px;;
+    margin: 10px;
+    border: 1px solid rgb(199, 199, 178);
     background-image: url(../img/newspaper3.jpg);
+}
+div.explanation{
+    left: 0;
+}
+div.participation{
+    left: calc(var(--tab-width) + var(--tab-gap));
+}
+div.benefits{
+    left: calc(2 * (var(--tab-width) + var(--tab-gap)));
+}
+div.requirements{
+    left: calc(3 * (var(--tab-width) + var(--tab-gap)));
+}
+div.explanation h3, div.participation h3, div.benefits h3, div.requirements h3{
+    margin-top: -15%;
+    width: var(--tab-width);
+    height: var(--tab-height);
+    background-color: var(--tab-color);
 }
 aside.sidebar{
     position: absolute;
@@ -54,4 +101,25 @@ div.extra2{
     width: 100%;
     height: var(--footbar-height);
     background-color: var(--footbar-color);
+}
+
+/*footer -- try it outside of the class*/
+/* introduction - in the middle of the page*/
+section.intro{
+    position: fixed;
+    bottom: 5%;
+    left: 30%;
+    width: 30%;
+    height: 80%;
+    padding: 2%;
+    background-image: url(../img/newspaper3.jpg);
+}
+
+div.extra1{
+    position: fixed;
+    bottom: 30%;
+    left: 30%;
+    width: 30%;
+    height: var(--footbar-height);
+    background-color: var(--sidebar-color);
 }
