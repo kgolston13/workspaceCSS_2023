@@ -52,11 +52,12 @@ header h1{
 /*using online fonts*/
 h3{
     font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-size: 1.25em;
-    letter-spacing: normal;
-    line-height: 1.5em;
     text-align: center;
+    font-size: 1.25em;
+}
+a{
+    text-decoration: none;
+    text-transform: uppercase;
 }
 /* 03: Layout */
 
@@ -74,22 +75,27 @@ div.explanation{
     left: 0;
 }
 div.participation{
-    left: calc(var(--tab-width) + var(--tab-gap));
+    left: 12vw;
 }
 div.benefits{
-    left: calc(2 * (var(--tab-width) + var(--tab-gap)));
+    left: 24vw;
 }
 div.requirements{
-    left: calc(3 * (var(--tab-width) + var(--tab-gap)));
+    left: 36vw;
 }
 div.explanation h3, div.participation h3, div.benefits h3, div.requirements h3{
     margin-top: -15%;
     width: var(--tab-width);
     height: var(--tab-height);
     background-color: var(--tab-color);
+    border-top-left-radius: 10px 10px;
+    border-top-right-radius: 10px 10px;
+    border: black 1px solid;
+    background-clip: content-box;
 }
 aside.sidebar{
     position: absolute;
+    top: 20%;
     width: 0;
     top: 0;
     right: 20%;
@@ -104,6 +110,16 @@ div.extra2{
 }
 
 /*footer -- try it outside of the class*/
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 40%;
+    width: 20%;
+    text-align: center;
+    background-color: var(--footbar-color);
+    border: 1px solid var(--border-color);
+    z-index: -3;
+}
 /* introduction - in the middle of the page*/
 section.intro{
     position: fixed;
@@ -113,6 +129,8 @@ section.intro{
     height: 80%;
     padding: 2%;
     background-image: url(../img/newspaper3.jpg);
+    z-index: -2;
+    transform: rotate(10deg); /*rotate the section*/ translate: 10px; /*move the section*/
 }
 
 div.extra1{
@@ -121,5 +139,38 @@ div.extra1{
     left: 30%;
     width: 30%;
     height: var(--footbar-height);
-    background-color: var(--sidebar-color);
+    background-image: url(../img/newspaper3.jpg);
+    z-index: -1;
+    transform: rotate(60deg); /*rotate the section*/ translate: -100px; /*move the section*/
+}
+/* 04: other decorations */
+div.explanation:active{
+    top: 15vh;
+}
+div.participation:active{
+    top: 15vh;
+}
+div.benefits:active{
+    top: 15vh;
+}
+div.requirements:active{
+    top: 15vh;
+}
+a:hover{
+    font-size: 1.2em;
+    color: hsl(175, 39%, 47%);
+}
+p::first-letter{
+    font-size: 2em;
+}
+li::first-line{
+    font-weight: bold;
+}
+p:nth-child(1){
+    font-style: italic;
+    color: rgb(162, 197, 226);
+}
+p:nth-child(2n+1){
+    font-style: bold;
+    color: rgb(162, 197, 226);
 }
