@@ -3,6 +3,8 @@
 00: CSS variables
 01: Colors
 02: Typography
+03: Layout
+04: other decorations
 
 =======================================
 */
@@ -70,6 +72,7 @@ div.explanation, div.participation, div.benefits, div.requirements{
     margin: 10px;
     border: 1px solid rgb(199, 199, 178);
     background-image: url(../img/newspaper3.jpg);
+    transition: all 2s ease-in-out;
 }
 div.explanation{
     left: 0;
@@ -95,10 +98,10 @@ div.explanation h3, div.participation h3, div.benefits h3, div.requirements h3{
 }
 aside.sidebar{
     position: absolute;
-    top: 20%;
-    width: 0;
-    top: 0;
-    right: 20%;
+    top: 5%;
+    width: 30%;
+    height: 60%;
+    right: 5%;
 }
 div.extra2{
     position: fixed;
@@ -116,7 +119,7 @@ footer{
     left: 40%;
     width: 20%;
     text-align: center;
-    background-color: var(--footbar-color);
+    background-color: var(--body-colorr);
     border: 1px solid var(--border-color);
     z-index: -3;
 }
@@ -129,7 +132,7 @@ section.intro{
     height: 80%;
     padding: 2%;
     background-image: url(../img/newspaper3.jpg);
-    z-index: -2;
+    z-index: -1;
     transform: rotate(10deg); /*rotate the section*/ translate: 10px; /*move the section*/
 }
 
@@ -140,7 +143,7 @@ div.extra1{
     width: 30%;
     height: var(--footbar-height);
     background-image: url(../img/newspaper3.jpg);
-    z-index: -1;
+    z-index: -2;
     transform: rotate(60deg); /*rotate the section*/ translate: -100px; /*move the section*/
 }
 /* 04: other decorations */
@@ -173,4 +176,58 @@ p:nth-child(1){
 p:nth-child(2n+1){
     font-style: bold;
     color: rgb(162, 197, 226);
+}
+
+/* 05: More practice on transition */
+section.intro h3 ~p:hover{
+    opacity: 1;
+    transform: scale(0.2);
+    transition: all 4s ease-in-out;
+}
+/* 06: Animation */
+footer{
+    animation: 10s ease-in-out 2s alternate infinite backnforth;
+}
+@keyframes backnforth{
+    from{transform: translate(-500px, 0px);}
+    30%{transform: translate(-300px, 0px);}
+    50%{transform: translate(0px, 0px);}
+    70%{transform: translate(300px, 0px);}
+    90%{transform: translate(500px, 0px);}
+}
+
+h2{
+    background-image: linear-gradient(to right, hsl(197, 100%, 50%), hsl(155, 81%, 55%), hsl(115, 74%, 54%));
+    animation: 4s ease-in-out infinite running changeColor;
+}
+@keyframes changeColor{
+    from{background-image: linear-gradient(to right, hsl(115, 74%, 54%), hsl(155, 81%, 55%), hsl(197, 100%, 50%));}
+    to{background-image: linear-gradient(to right, hsl(197, 100%, 50%), hsl(155, 81%, 55%), hsl(115, 74%, 54%));}
+}
+
+/* 07: Fancy features */
+div.extra1{
+    border-image: linear-gradient(to right, hsl(197, 100%, 50%), hsl(155, 81%, 55%), hsl(115, 74%, 54%)) 10;
+}
+/* 08: Clip-path 
+body{
+    clip-path: circle(100% at 50vw 50vh);
+    animation: 10s ease-in-out infinite running changeClip;
+}
+@keyframes changeClip{
+    from{clip-path: circle(100% at 50vw 50vh);}
+    to{clip-path: circle(20% at 50vw 50vh);}
+}
+*/
+aside.sidebar{
+    clip-path: polygon(0 0,0 70%, 50% 100%, 100% 70%, 100% 0);
+}
+div#design-archives{
+    display: none;
+}
+aside.sidebar h3{
+    display: none;
+}
+aside.sidebar ul li{
+    list-style: none;
 }
